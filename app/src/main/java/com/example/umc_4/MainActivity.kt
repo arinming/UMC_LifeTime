@@ -11,7 +11,7 @@ import com.example.umc_4.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    var edtText = ""
+    var edtText: String = ""
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
         edtText = binding.edtMain.text.toString()
-        binding.edtMain.setText(edtText)
+        binding.edtMain.text = null
     }
 
     override fun onRestart() {
